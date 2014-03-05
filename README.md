@@ -56,12 +56,11 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  fontina: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+    fontina: {
+      fonts: {
+        src: './fonts'
+      }
+    }
 });
 ```
 
@@ -70,15 +69,14 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  fontina: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+    fontina: {
+      fonts: {
+        src: './fonts',
+        options: {
+          output: true
+        }
+      }
+    }
 });
 ```
 
