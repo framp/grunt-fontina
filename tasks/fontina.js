@@ -11,36 +11,34 @@
 
 var fontina = require('fontina');
 var path = require('path');
+var async = require('async');
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('fontina', 'Grunt plugin to generate fonts', function() {
-    var options = this.options({
-      __spawn: function(command, args, opts){
-        return grunt.util.spawn({
-                  cmd: command,
-                  args: args,
-                  opts: opts
-            }, options.callback);
-      }
-    });
-
+  grunt.registerMultiTask('fontina', 'Grunt plugin to generate @font-face ready fonts', function() {
+    var options = this.options();
+    var tasks = [];
+    
     this.files.forEach(function(f) {
+      var outputDir = f.dest;
+      if (!grunt.file.isPathAbsolute(outputDir)){
+        outputDir = path.join(process.cwd(), outputDir);
+      }
       var src = f.src.filter(function(filepath) {
-        if (!grunt.file.isDir(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" is not directory.');
+        if (!grunt.file.exists(filepath)) {
+          grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         }
+        if (!grunt.file.isFile(filepath))
+          return false;
         return true;
       }).map(function(filepath) {
-        if (!grunt.file.isPathAbsolute(filepath)){
+        if (!grunt.file.isPathAbsolute(filepath))
           filepath = path.join(process.cwd(), filepath);
-        }
-        fontina(filepath, options);
-        return;
+        tasks.push(fontina.bind(null, filepath, outputDir, options))
       });
-      
     });
+    async.parallel(tasks, this.async());
   });
 
 };
