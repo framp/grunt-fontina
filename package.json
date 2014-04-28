@@ -1,7 +1,7 @@
 {
   "name": "grunt-fontina",
   "description": "Grunt plugin to generate fonts using fontina",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/framp/grunt-fontina",
   "author": "Federico Rampazzo <frampone@gmail.com> (http://framp.me)",
   "repository": {
@@ -30,7 +30,7 @@
   },
   "keywords": ["gruntplugin", "font", "css", "ttf", "otf", "svg", "woff", "eot", "generator", "webfont", "truetype", "typography"],
   "dependencies": {
-    "fontina": "0.0.8",
+    "fontina": "0.0.9",
     "async": "^0.7.0"
   }
 }
