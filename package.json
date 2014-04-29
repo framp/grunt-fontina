@@ -1,7 +1,7 @@
 {
   "name": "grunt-fontina",
   "description": "Grunt plugin to generate fonts using fontina",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "http://framp.me/fontina",
   "author": "Federico Rampazzo <frampone@gmail.com> (http://framp.me)",
   "repository": {
