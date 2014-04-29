@@ -30,7 +30,7 @@
   },
   "keywords": ["gruntplugin", "font", "css", "ttf", "otf", "svg", "woff", "eot", "generator", "webfont", "truetype", "typography"],
   "dependencies": {
-    "fontina": "0.1.0",
+    "fontina": "*",
     "async": "^0.7.0"
   }
 }
