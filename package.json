@@ -26,9 +26,22 @@
     "grunt": "~0.4.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": ">=0.4.0"
   },
-  "keywords": ["gruntplugin", "font", "css", "ttf", "otf", "svg", "woff", "eot", "generator", "webfont", "truetype", "typography"],
+  "keywords": [
+    "gruntplugin",
+    "font",
+    "css",
+    "ttf",
+    "otf",
+    "svg",
+    "woff",
+    "eot",
+    "generator",
+    "webfont",
+    "truetype",
+    "typography"
+  ],
   "dependencies": {
     "fontina": "*",
     "async": "^0.7.0"
